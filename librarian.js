@@ -25,16 +25,36 @@ var newBook = {title: "testTitle", year: "2018", author: "testNeil Gaiman", publ
 console.log(addBook(newBook));
 
 /* Task 4 */
-function bookByAuthor(){
-  //add code
+function bookByAuthor(author){
+ var value;
+  var n;
+  var found=[];
+
+  for (var i= 0; i<library.length; i++){
+    value = library[i].author;
+    n = value.toLowerCase().match(author);
+    if (n)found.push(library[i]);
+  }
+  return found;
 }
 
-console.log(bookByAuthor());
+console.log(bookByAuthor("Fred Brooks"));
 
 /* Task 5 */
+
 function findByTitle( title ){
-  //add code
+  var value;
+  var n;
+  var found=[];
+
+  for (var i= 0; i<library.length; i++){
+    value = library[i].title;
+    n = value.toLowerCase().includes(title);
+    if (n)found.push(library[i]);
+  }
+  return found;
 }
 
 console.log(findByTitle("man"));
 console.log(findByTitle("myth"));
+
